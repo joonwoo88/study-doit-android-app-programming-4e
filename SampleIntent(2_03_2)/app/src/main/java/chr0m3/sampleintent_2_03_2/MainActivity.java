@@ -1,5 +1,6 @@
 package chr0m3.sampleintent_2_03_2;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButton1Clicked(View v) {
-        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        Intent intent = new Intent();
+
+        ComponentName name = new ComponentName("chr0m3.sampleintent_2_03_2", "chr0m3.sampleintent_2_03_2.MenuActivity");
+        intent.setComponent(name);
         startActivityForResult(intent, REQUEST_CODE_MENU);
     }
 
